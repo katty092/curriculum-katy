@@ -1,0 +1,113 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(251, 246, 250);
+}
+
+header, nav, aside, footer, section{
+    padding:20px;
+    margin:5px;
+    border-radius:10px;
+    text-align: center;
+    height: 150px;
+}
+
+nav{
+    background-color: rgb(255, 222, 248);
+    grid-area: nav;
+    padding: 9px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+nav::first-line{
+    text-decoration: underline;
+}
+
+header:after {
+    content: "¡CONTRATENME :D/!";
+    color: rgb(255, 0, 204);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+header:hover::after {
+    opacity: 1;
+}
+
+nav{
+    background-image:url(../ternurin.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 160px;
+}
+
+header{
+    background-color: rgb(253, 212, 241);
+    grid-area: header;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+header::first-line{
+    text-decoration: wavy underline rgb(247, 145, 239);;
+}
+
+aside{
+    background-image: url(../melody.jpg);
+    background-position: center center;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    cursor:grab
+}
+
+aside:active{
+    background-image: url(../silivan.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 170px;
+    cursor:not-allowed
+}
+
+footer{
+    background-color:rgb(253, 212, 241);
+    grid-area:footer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+footer::first-line{
+    text-decoration: wavy underline rgb(247, 145, 239);
+}
+
+section{
+    background-color:rgb(253, 212, 241);
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+section::first-line{
+    text-decoration: wavy underline rgb(247, 145, 239);
+}
+
+section:nth-of-type(1){
+    grid-area: section1;
+}
+section:nth-of-type(2){
+    grid-area: section2;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "nav nav nav"
+        "header header aside"
+        "section1 section2 aside"
+        "footer footer footer";
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    max-width: 900px;
+    margin: auto;
+    background: #f7e4f2;
+    padding: 20px;
+}
